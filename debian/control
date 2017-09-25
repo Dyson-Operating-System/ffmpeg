@@ -67,7 +67,7 @@ Build-Depends:
  libiec61883-dev [linux-any],
  libavc1394-dev [linux-any],
 # autodetected: indev 'jack'
- libjack-jackd2-dev,
+ libjack-jackd2-dev [!illumos-amd64],
 # missing dependency of libtesseract-dev #836849
  libleptonica-dev,
 # autodetected for the tiff decoder
@@ -89,7 +89,7 @@ Build-Depends:
 # --enable-libopenjpeg
  libopenjp2-7-dev,
 # --enable-libopenmpt
- libopenmpt-dev,
+ libopenmpt-dev [!illumos-amd64],
 # --enable-libopus
  libopus-dev,
 # --enable-libpulse
