@@ -1,3 +1,11 @@
+ffmpeg (7:3.2.5-1+dyson1) unstable; urgency=medium
+
+  * Package for Dyson
+  * Added dyson-strerror_r.patch
+  * Tests FTBFS
+
+ -- Igor Pashev <pashev.igor@gmail.com>  Mon, 25 Sep 2017 16:47:08 +0300
+
 ffmpeg (7:3.2.5-1) unstable; urgency=medium
 
   * Team upload.
