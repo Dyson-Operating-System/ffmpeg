@@ -1,0 +1,12 @@
+Description: really use XSI strerror_r.
+  __EXTENSIONS__ enables _GNU_SOURCE on Dyson.
+--- ffmpeg-3.2.5.orig/libavutil/error.c
++++ ffmpeg-3.2.5/libavutil/error.c
+@@ -17,6 +17,7 @@
+  */
+ 
+ #undef _GNU_SOURCE
++#undef __EXTENSIONS__
+ #define _XOPEN_SOURCE 600 /* XSI-compliant version of strerror_r */
+ #include "avutil.h"
+ #include "avstring.h"
