@@ -65,7 +65,6 @@ CONFIG := --prefix=/usr \
 	--enable-libgsm \
 	--enable-libmp3lame \
 	--enable-libopenjpeg \
-	--enable-libopenmpt \
 	--enable-libopus \
 	--enable-libpulse \
 	--enable-librubberband \
@@ -179,6 +178,9 @@ endif
 
 ifeq (,$(filter $(DEB_HOST_ARCH),illumos-amd64))
   CONFIG += --toolchain=hardened
+endif
+ifneq ($(DEB_HOST_ARCH),illumos-amd64)
+	CONFIG += --enable-libopenmpt
 endif
 
 # Set cross-build prefix for compiler, pkg-config...
