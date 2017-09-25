@@ -43,7 +43,6 @@ FLAVORS = standard extra static
 #   * --enable-opencl [!hurd-any]:  This is considered an experimental API.
 CONFIG := --prefix=/usr \
 	--extra-version="$(DEB_REVISION)" \
-	--toolchain=hardened \
 	--libdir=/usr/lib/$(DEB_HOST_MULTIARCH) \
 	--incdir=/usr/include/$(DEB_HOST_MULTIARCH) \
 	--enable-gpl \
@@ -176,6 +175,10 @@ ifneq (,$(filter $(DEB_HOST_ARCH),mips mipsel mips64 mips64el))
 endif
 ifneq (,$(filter $(DEB_HOST_ARCH),mips mipsel))
 	CONFIG += --disable-mipsfpu
+endif
+
+ifeq (,$(filter $(DEB_HOST_ARCH),illumos-amd64))
+  CONFIG += --toolchain=hardened
 endif
 
 # Set cross-build prefix for compiler, pkg-config...
