@@ -204,6 +204,7 @@ override_dh_auto_configure:
 # Remove the subdirectories generated for the flavors.
 override_dh_auto_clean:
 	$(foreach flavor,$(FLAVORS),[ ! -d debian/$(flavor) ] || rm -r debian/$(flavor);)
+	rm -fv override_dh_auto_configure
 
 # Create doxygen documentation:
 override_dh_auto_build-indep:
